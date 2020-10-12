@@ -19,4 +19,8 @@ export class HeroesComponent implements OnInit {
     console.log(this.heroes)
   }
 
+  goTo(id){
+    this._heroesservice.goToHeroe(id)
+  }
+
 }
