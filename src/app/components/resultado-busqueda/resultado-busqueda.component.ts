@@ -10,20 +10,17 @@ import {HeroesService} from '../../services/heroes.service'
 export class ResultadoBusquedaComponent implements OnInit {
 
   resultado: any[] = []
+  termino = ''
 
   constructor(private activatedRoute:ActivatedRoute, private _heroesService:HeroesService) { 
 
     this.activatedRoute.params.subscribe( params => {
+      this.termino = params.termino
       this.resultado = this._heroesService.buscarHeroes(params.termino)
-      console.log(this.resultado)
     })
   }
 
   ngOnInit(): void {
-  }
-
-  goTo(id){
-    this._heroesService.goToHeroe(id)
   }
 
 }

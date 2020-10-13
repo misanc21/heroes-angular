@@ -79,7 +79,7 @@ export class HeroesService {
       termino = termino.toLowerCase()
 
       heroesArr = this.heroes.filter(h=>{
-        return h.nombre.toLowerCase() === termino
+        return h.nombre.toLowerCase().indexOf(termino) >= 0
       })
 
       return heroesArr
